@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_landing_ua_features",
+  "info": {
+    "displayName": "User acquisition feature",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "svgName": {
+      "type": "string",
+      "required": true,
+      "description": "Icon name used to load SVG from the Lucide set (kebab-case, no .svg). Examples: target, chart-column, users, zap. Full list: https://lucide.dev/icons/"
+    },
+    "colorFrom": {
+      "type": "string",
+      "required": true
+    },
+    "colorTo": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

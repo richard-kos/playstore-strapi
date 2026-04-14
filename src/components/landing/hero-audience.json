@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_landing_hero_audiences",
+  "info": {
+    "displayName": "Hero audience",
+    "description": "App Developers vs Game Publishers hero block",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "audienceKey": {
+      "type": "enumeration",
+      "enum": ["apps", "games"],
+      "required": true
+    },
+    "badge": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryCta": {
+      "type": "string",
+      "required": true
+    },
+    "otherCta": {
+      "type": "string",
+      "required": true
+    },
+    "values": {
+      "type": "json",
+      "required": true,
+      "description": "When audienceKey is apps: { \"monthly_installs\": \"…\", \"app_partners\": \"…\", \"avg_cpi_reduction\": \"…\" }. When audienceKey is games: { \"ad_spend_managed\": \"…\", \"game_titles\": \"…\", \"roas_improvement\": \"…\" }."
+    },
+    "splitLeft": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.hero-split-column"
+    },
+    "splitRight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.hero-split-column"
+    }
+  }
+}

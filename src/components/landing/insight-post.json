@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_landing_insight_posts",
+  "info": {
+    "displayName": "Insight / blog post",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "lastReadDate": {
+      "type": "datetime"
+    },
+    "readTimeLabel": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "authorName": {
+      "type": "string",
+      "required": false
+    },
+    "authorAvatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Poster headshot (square works best)"
+    }
+  }
+}

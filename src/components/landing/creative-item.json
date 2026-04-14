@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_landing_creative_items",
+  "info": {
+    "displayName": "Creative showcase item",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "videoLink": {
+      "type": "string",
+      "required": true
+    },
+    "overlayGradient": {
+      "type": "string"
+    }
+  }
+}

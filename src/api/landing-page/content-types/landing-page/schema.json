@@ -1,0 +1,105 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Landing page",
+    "description": "MVP marketing landing — sections map to playstore-mvp /landing page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section1Hero": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.hero-audience",
+      "required": true
+    },
+    "section2Heading": {
+      "type": "string",
+      "default": "Trusted Partners & Platforms"
+    },
+    "section2Partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.partner"
+    },
+    "section3Eyebrow": {
+      "type": "string",
+      "default": "User Acquisition"
+    },
+    "section3Title": {
+      "type": "string",
+      "required": true
+    },
+    "section3Subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "section3Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.ua-feature"
+    },
+    "section4Eyebrow": {
+      "type": "string",
+      "default": "Creative Services"
+    },
+    "section4Title": {
+      "type": "string",
+      "required": true
+    },
+    "section4Subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "section4Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.creative-item"
+    },
+    "section5Eyebrow": {
+      "type": "string",
+      "default": "Testimonials"
+    },
+    "section5Title": {
+      "type": "string",
+      "required": true
+    },
+    "section5Testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.testimonial"
+    },
+    "section6Eyebrow": {
+      "type": "string",
+      "default": "Insights"
+    },
+    "section6Title": {
+      "type": "string",
+      "required": true
+    },
+    "section6Posts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.insight-post"
+    },
+    "section7Title": {
+      "type": "string",
+      "required": true,
+      "default": "Let's Work Together"
+    },
+    "section7Subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "section7ResponseText": {
+      "type": "string",
+      "required": true,
+      "default": "Typically respond within 24 hours"
+    }
+  }
+}

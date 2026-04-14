@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_landing_bullet_lines",
+  "info": {
+    "displayName": "Bullet line",
+    "description": "Single checklist line for hero split columns",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

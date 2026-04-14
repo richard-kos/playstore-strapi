@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_landing_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "rating": {
+      "type": "decimal",
+      "default": 5,
+      "min": 1,
+      "max": 5
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Portrait photo (square works best)"
+    }
+  }
+}

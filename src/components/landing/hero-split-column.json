@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_landing_hero_split_columns",
+  "info": {
+    "displayName": "Hero split column",
+    "description": "One column: Lucide icon, title, optional paragraph, optional checklist",
+    "icon": "columns"
+  },
+  "options": {},
+  "attributes": {
+    "svgName": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text",
+      "required": false
+    },
+    "bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.bullet-line"
+    }
+  }
+}
