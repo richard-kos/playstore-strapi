@@ -27,20 +27,25 @@
       "required": true,
       "allowedTypes": ["images"]
     },
-    "category": {
-      "type": "string",
-      "required": true
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-category.blog-category",
+      "inversedBy": "blog_posts",
+      "required": true,
+      "description": "Select existing categories or create a new Blog category entry from the relation picker"
     },
     "postDate": {
       "type": "datetime"
     },
-    "description": {
-      "type": "text",
-      "required": true
-    },
-    "link": {
-      "type": "string",
-      "required": true
+    "detail": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": false,
+      "description": "Full article body: HTML from CKEditor (images, video embeds, links, fonts, colors)"
     },
     "authorName": {
       "type": "string"
@@ -51,6 +56,11 @@
       "required": false,
       "allowedTypes": ["images"],
       "description": "Author headshot (square works best)"
+    },
+    "authorDetail": {
+      "type": "string",
+      "required": true,
+      "description": "Author bio / extended byline (plain text)"
     }
   }
 }

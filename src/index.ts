@@ -7,6 +7,11 @@ const PUBLIC_READ_ACTIONS = [
   'api::portfolio.portfolio.find',
   /** Collection — `/blog` page in playstore-mvp */
   'api::blog-post.blog-post.find',
+  /**
+   * Required so `categories` on blog posts can be populated over the public REST API.
+   * Without this, Strapi omits category data and the MVP cannot show category labels/links.
+   */
+  'api::blog-category.blog-category.find',
 ] as const;
 
 export default {

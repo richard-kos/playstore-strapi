@@ -11,6 +11,7 @@ export default factories.createCoreController('api::blog-post.blog-post', () => 
       populate: {
         image: true,
         authorAvatar: true,
+        categories: true,
       },
     };
     return await super.find(ctx);
@@ -22,6 +23,7 @@ export default factories.createCoreController('api::blog-post.blog-post', () => 
       populate: {
         image: true,
         authorAvatar: true,
+        categories: true,
       },
     };
     return await super.findOne(ctx);
