@@ -1,11 +1,26 @@
 {
-  "collectionName": "components_landing_insight_posts",
+  "kind": "collectionType",
+  "collectionName": "blog_posts",
   "info": {
-    "displayName": "Insight / blog post",
-    "icon": "file"
+    "singularName": "blog-post",
+    "pluralName": "blog-posts",
+    "displayName": "Blog",
+    "description": "Blog articles (same fields as landing insight posts) for playstore-mvp /blog"
   },
-  "options": {},
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -19,13 +34,6 @@
     "postDate": {
       "type": "datetime"
     },
-    "readTimeLabel": {
-      "type": "string"
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "text",
       "required": true
@@ -35,15 +43,14 @@
       "required": true
     },
     "authorName": {
-      "type": "string",
-      "required": false
+      "type": "string"
     },
     "authorAvatar": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"],
-      "description": "Poster headshot (square works best)"
+      "description": "Author headshot (square works best)"
     }
   }
 }

@@ -12,10 +12,6 @@
       "enum": ["apps", "games"],
       "required": true
     },
-    "badge": {
-      "type": "string",
-      "required": true
-    },
     "title": {
       "type": "string",
       "required": true

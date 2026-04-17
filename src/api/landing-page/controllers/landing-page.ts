@@ -17,16 +17,10 @@ export default factories.createCoreController('api::landing-page.landing-page', 
         },
         section2Partners: { populate: ['image'] },
         section3Features: true,
-        section4Items: { populate: ['thumbnail'] },
+        section4Items: { populate: ['thumbnail', 'video'] },
         section5Testimonials: {
           populate: {
             avatar: true,
-          },
-        },
-        section6Posts: {
-          populate: {
-            image: true,
-            authorAvatar: true,
           },
         },
       },

@@ -12,20 +12,23 @@
       "required": true,
       "allowedTypes": ["images"]
     },
-    "subtitle": {
-      "type": "string",
-      "required": true
-    },
     "title": {
       "type": "string",
       "required": true
     },
-    "videoLink": {
+    "developer": {
       "type": "string",
       "required": true
     },
-    "overlayGradient": {
-      "type": "string"
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["videos"]
+    },
+    "text": {
+      "type": "text",
+      "required": true
     }
   }
 }

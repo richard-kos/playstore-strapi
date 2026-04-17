@@ -1,6 +1,13 @@
 import type { Core } from '@strapi/strapi';
 
-const PUBLIC_LANDING_ACTION = 'api::landing-page.landing-page.find' as const;
+const PUBLIC_READ_ACTIONS = [
+  /** Single type — marketing landing */
+  'api::landing-page.landing-page.find',
+  /** Collection — `/portfolio` page in playstore-mvp */
+  'api::portfolio.portfolio.find',
+  /** Collection — `/blog` page in playstore-mvp */
+  'api::blog-post.blog-post.find',
+] as const;
 
 export default {
   /**
@@ -10,8 +17,8 @@ export default {
   register(/* { strapi }: { strapi: Core.Strapi } */) {},
 
   /**
-   * Grant public read access to the landing page single type so the headless
-   * frontend can fetch `/api/landing-page` without an API token after deploy.
+   * Grant public read access so the headless frontend can fetch Strapi REST
+   * without an API token (same as manual Settings → Users & Permissions → Public).
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
     const publicRole = await strapi.db
@@ -22,24 +29,26 @@ export default {
       return;
     }
 
-    const existing = await strapi.db.query('plugin::users-permissions.permission').findOne({
-      where: {
-        action: PUBLIC_LANDING_ACTION,
-        role: publicRole.id,
-      },
-    });
+    for (const action of PUBLIC_READ_ACTIONS) {
+      const existing = await strapi.db.query('plugin::users-permissions.permission').findOne({
+        where: {
+          action,
+          role: publicRole.id,
+        },
+      });
 
-    if (existing) {
-      return;
+      if (existing) {
+        continue;
+      }
+
+      await strapi.db.query('plugin::users-permissions.permission').create({
+        data: {
+          action,
+          role: publicRole.id,
+        },
+      });
+
+      strapi.log.info(`[bootstrap] Enabled ${action} for Public role`);
     }
-
-    await strapi.db.query('plugin::users-permissions.permission').create({
-      data: {
-        action: PUBLIC_LANDING_ACTION,
-        role: publicRole.id,
-      },
-    });
-
-    strapi.log.info(`[bootstrap] Enabled ${PUBLIC_LANDING_ACTION} for Public role`);
   },
 };

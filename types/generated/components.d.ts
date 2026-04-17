@@ -19,11 +19,11 @@ export interface LandingCreativeItem extends Struct.ComponentSchema {
     icon: 'play';
   };
   attributes: {
-    overlayGradient: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
+    developer: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
     thumbnail: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    videoLink: Schema.Attribute.String & Schema.Attribute.Required;
+    video: Schema.Attribute.Media<'videos'> & Schema.Attribute.Required;
   };
 }
 
@@ -37,7 +37,6 @@ export interface LandingHeroAudience extends Struct.ComponentSchema {
   attributes: {
     audienceKey: Schema.Attribute.Enumeration<['apps', 'games']> &
       Schema.Attribute.Required;
-    badge: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     otherCta: Schema.Attribute.String & Schema.Attribute.Required;
     primaryCta: Schema.Attribute.String & Schema.Attribute.Required;
@@ -75,8 +74,8 @@ export interface LandingInsightPost extends Struct.ComponentSchema {
     category: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    lastReadDate: Schema.Attribute.DateTime;
     link: Schema.Attribute.String & Schema.Attribute.Required;
+    postDate: Schema.Attribute.DateTime;
     readTimeLabel: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
