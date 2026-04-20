@@ -5,7 +5,7 @@
     "singularName": "portfolio",
     "pluralName": "portfolios",
     "displayName": "Portfolio",
-    "description": "Masonry portfolio items (title + image) for playstore-mvp /portfolio"
+    "description": "Portfolio work items (poster image, optional video, copy) for playstore-mvp /portfolio"
   },
   "options": {
     "draftAndPublish": true
@@ -16,11 +16,25 @@
       "type": "string",
       "required": true
     },
+    "developer": {
+      "type": "string",
+      "required": false
+    },
+    "text": {
+      "type": "text",
+      "required": false
+    },
     "image": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["images"]
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
     }
   }
 }

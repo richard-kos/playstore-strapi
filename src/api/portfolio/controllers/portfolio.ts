@@ -1,5 +1,5 @@
 /**
- * portfolio controller — populate image media for REST responses.
+ * portfolio controller — populate image + video media for REST responses.
  */
 
 import { factories } from '@strapi/strapi';
@@ -10,6 +10,7 @@ export default factories.createCoreController('api::portfolio.portfolio', () => 
       ...ctx.query,
       populate: {
         image: true,
+        video: true,
       },
     };
     return await super.find(ctx);
@@ -20,6 +21,7 @@ export default factories.createCoreController('api::portfolio.portfolio', () => 
       ...ctx.query,
       populate: {
         image: true,
+        video: true,
       },
     };
     return await super.findOne(ctx);
