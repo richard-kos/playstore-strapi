@@ -26,6 +26,17 @@ export default {
    * without an API token (same as manual Settings → Users & Permissions → Public).
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
+    const dbClient = strapi.config.get('database.connection.client') as string | undefined;
+    if (dbClient === 'sqlite') {
+      try {
+        await strapi.db.connection.raw('PRAGMA journal_mode = WAL');
+        await strapi.db.connection.raw('PRAGMA busy_timeout = 5000');
+        strapi.log.info('[bootstrap] SQLite: WAL journal + 5000ms busy_timeout');
+      } catch (err) {
+        strapi.log.warn(`[bootstrap] SQLite pragma setup skipped: ${err}`);
+      }
+    }
+
     const publicRole = await strapi.db
       .query('plugin::users-permissions.role')
       .findOne({ where: { type: 'public' } });
