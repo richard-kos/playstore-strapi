@@ -42,7 +42,8 @@ export interface LandingHeroAudience extends Struct.ComponentSchema {
     primaryCta: Schema.Attribute.String & Schema.Attribute.Required;
     splitLeft: Schema.Attribute.Component<'landing.hero-split-column', false>;
     splitRight: Schema.Attribute.Component<'landing.hero-split-column', false>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+    titleParts: Schema.Attribute.Component<'landing.hero-title-part', true>;
     values: Schema.Attribute.JSON & Schema.Attribute.Required;
   };
 }
@@ -59,6 +60,19 @@ export interface LandingHeroSplitColumn extends Struct.ComponentSchema {
     bullets: Schema.Attribute.Component<'landing.bullet-line', true>;
     svgName: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LandingHeroTitlePart extends Struct.ComponentSchema {
+  collectionName: 'components_landing_hero_title_parts';
+  info: {
+    description: 'One segment of the hero headline; chain multiple parts for different colors per word or phrase.';
+    displayName: 'Hero title part';
+    icon: 'brush';
+  };
+  attributes: {
+    color: Schema.Attribute.String;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -139,6 +153,7 @@ declare module '@strapi/strapi' {
       'landing.creative-item': LandingCreativeItem;
       'landing.hero-audience': LandingHeroAudience;
       'landing.hero-split-column': LandingHeroSplitColumn;
+      'landing.hero-title-part': LandingHeroTitlePart;
       'landing.insight-post': LandingInsightPost;
       'landing.partner': LandingPartner;
       'landing.testimonial': LandingTestimonial;

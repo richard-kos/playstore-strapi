@@ -13,6 +13,7 @@ export default factories.createCoreController('api::landing-page.landing-page', 
           populate: {
             splitLeft: { populate: ['bullets'] },
             splitRight: { populate: ['bullets'] },
+            titleParts: true,
           },
         },
         section2Partners: { populate: ['image'] },

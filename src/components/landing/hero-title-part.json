@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_landing_hero_title_parts",
+  "info": {
+    "displayName": "Hero title part",
+    "description": "One segment of the hero headline; chain multiple parts for different colors per word or phrase.",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "description": "CSS color for this segment only, e.g. #2563eb, rgb(37,99,235), or hsl(220 90% 50%). Leave empty to use the default heading color."
+    }
+  }
+}

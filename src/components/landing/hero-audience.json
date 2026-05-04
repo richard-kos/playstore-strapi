@@ -14,7 +14,13 @@
     },
     "title": {
       "type": "string",
-      "required": true
+      "description": "Plain headline when Title parts is empty. When Title parts has entries, this is optional (used as fallback for older clients)."
+    },
+    "titleParts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.hero-title-part",
+      "description": "Colored headline: add one row per phrase or word. Example: \"Welcome \" (default color), \"app\" (#2563eb), \" or \" (default), \"game\" (#dc2626)."
     },
     "description": {
       "type": "text",
