@@ -2,7 +2,7 @@
   "collectionName": "components_landing_hero_title_parts",
   "info": {
     "displayName": "Hero title part",
-    "description": "One segment of the hero headline; chain multiple parts for different colors per word or phrase.",
+    "description": "One segment of the hero headline. Set Start color and End color together for a left-to-right gradient on that segment. Leave both empty for the default heading color.",
     "icon": "brush"
   },
   "options": {},
@@ -11,9 +11,13 @@
       "type": "string",
       "required": true
     },
-    "color": {
+    "startColor": {
       "type": "string",
-      "description": "CSS color for this segment only, e.g. #2563eb, rgb(37,99,235), or hsl(220 90% 50%). Leave empty to use the default heading color."
+      "description": "Left stop for a left-to-right text gradient (hex / rgb / hsl). Pair with End color."
+    },
+    "endColor": {
+      "type": "string",
+      "description": "Right stop for the text gradient. Pair with Start color."
     }
   }
 }

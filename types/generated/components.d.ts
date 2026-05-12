@@ -66,12 +66,13 @@ export interface LandingHeroSplitColumn extends Struct.ComponentSchema {
 export interface LandingHeroTitlePart extends Struct.ComponentSchema {
   collectionName: 'components_landing_hero_title_parts';
   info: {
-    description: 'One segment of the hero headline; chain multiple parts for different colors per word or phrase.';
+    description: 'One segment of the hero headline. Set Start color and End color together for a left-to-right gradient on that segment. Leave both empty for the default heading color.';
     displayName: 'Hero title part';
     icon: 'brush';
   };
   attributes: {
-    color: Schema.Attribute.String;
+    endColor: Schema.Attribute.String;
+    startColor: Schema.Attribute.String;
     text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
