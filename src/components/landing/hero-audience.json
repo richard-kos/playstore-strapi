@@ -9,7 +9,10 @@
   "attributes": {
     "audienceKey": {
       "type": "enumeration",
-      "enum": ["apps", "games"],
+      "enum": [
+        "apps",
+        "games"
+      ],
       "required": true
     },
     "title": {
@@ -37,7 +40,7 @@
     "values": {
       "type": "json",
       "required": true,
-      "description": "When audienceKey is apps: { \"monthly_installs\": \"…\", \"app_partners\": \"…\", \"avg_cpi_reduction\": \"…\" }. When audienceKey is games: { \"ad_spend_managed\": \"…\", \"game_titles\": \"…\", \"roas_improvement\": \"…\" }."
+      "description": "Hero stats row: { \"years_experience\": \"10+\", \"budget_managed\": \"30M\", \"networks\": \"10+\" } (same keys for apps and games)."
     },
     "splitLeft": {
       "type": "component",
