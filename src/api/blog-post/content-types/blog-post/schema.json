@@ -38,6 +38,12 @@
     "postDate": {
       "type": "datetime"
     },
+    "metaDescription": {
+      "type": "text",
+      "required": false,
+      "maxLength": 160,
+      "description": "SEO meta description for this post (shown in search results and social previews; aim for ~150-160 characters)"
+    },
     "detail": {
       "type": "customField",
       "customField": "plugin::ckeditor5.CKEditor",
