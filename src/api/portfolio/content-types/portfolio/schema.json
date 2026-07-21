@@ -35,6 +35,12 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["videos"]
+    },
+    "audienceKey": {
+      "type": "enumeration",
+      "enum": ["apps", "games"],
+      "default": "games",
+      "description": "Which /portfolio toggle audience this item shows under (App Developer = apps, Game Publisher = games). Mirrors Hero audience audienceKey."
     }
   }
 }
