@@ -29,6 +29,12 @@
     "text": {
       "type": "text",
       "required": true
+    },
+    "audienceKey": {
+      "type": "enumeration",
+      "enum": ["apps", "games"],
+      "default": "games",
+      "description": "Which landing hero-toggle audience this Creative Services video shows under (apps vs games). Mirrors Hero audience audienceKey."
     }
   }
 }
